@@ -1,7 +1,7 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore mac hiden file
+# Ignore mac hidden file
 .DS_Store
 
 # Ignore the default SQLite database.
