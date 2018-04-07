@@ -2,10 +2,7 @@ TODO list of things to do in order to dev a twitter like client using rails, vue
 [*] = done
 
 [*]creat git repo
-[*]creat twitter api keys
-find a solution to nat my local serveur for the twitter auth service (nat without a nat)
 push the inital projects (client(vue) and server(rails)) into the git
-[*]find a twitter api lib for Rails
 [*]find a mail lib for rails (ink?)
 
 funcitonalities/pages
@@ -14,7 +11,6 @@ USER
 -login/logout
 -edit user (password, username, avatar)
 -verify email
--link account
 
 TWITTER
 -feed(main page when Logedin)
