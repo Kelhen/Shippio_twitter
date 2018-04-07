@@ -1,15 +1,15 @@
-current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/bindex-0.5.0/ext/bindex
-/Users/jeremicolborati/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20180406-57734-10mvb8f.rb extconf.rb
+current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+/Users/jeremicolborati/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20180407-37520-iphis4.rb extconf.rb
 creating Makefile
 
-current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/bindex-0.5.0/ext/bindex
 make "DESTDIR=" clean
 
-current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/bindex-0.5.0/ext/bindex
 make "DESTDIR="
 compiling cruby.c
 linking shared-object bindex/cruby.bundle
 
-current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/bindex-0.5.0/ext/bindex
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20180406-57734-2oq1ds/bindex
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20180407-37520-1nsycyi/bindex

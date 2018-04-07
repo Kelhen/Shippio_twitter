@@ -1,5 +1,5 @@
-current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri
-/Users/jeremicolborati/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20180406-57734-xxt144.rb extconf.rb
+current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri
+/Users/jeremicolborati/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20180407-37520-dtq29w.rb extconf.rb
 checking if the C compiler accepts ... yes
 checking if the C compiler accepts -Wno-error=unused-command-line-argument-hard-error-in-future... no
 Building nokogiri using packaged libraries.
@@ -33,7 +33,7 @@ Extracting libxml2-2.9.7.tar.gz into tmp/x86_64-apple-darwin17.4.0/ports/libxml2
 Running 'configure' for libxml2 2.9.7... OK
 Running 'compile' for libxml2 2.9.7... OK
 Running 'install' for libxml2 2.9.7... OK
-Activating libxml2 2.9.7 (from /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-apple-darwin17.4.0/libxml2/2.9.7)...
+Activating libxml2 2.9.7 (from /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-apple-darwin17.4.0/libxml2/2.9.7)...
 ************************************************************************
 IMPORTANT NOTICE:
 
@@ -57,7 +57,7 @@ Extracting libxslt-1.1.32.tar.gz into tmp/x86_64-apple-darwin17.4.0/ports/libxsl
 Running 'configure' for libxslt 1.1.32... OK
 Running 'compile' for libxslt 1.1.32... OK
 Running 'install' for libxslt 1.1.32... OK
-Activating libxslt 1.1.32 (from /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-apple-darwin17.4.0/libxslt/1.1.32)...
+Activating libxslt 1.1.32 (from /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/nokogiri-1.8.2/ports/x86_64-apple-darwin17.4.0/libxslt/1.1.32)...
 checking for -llzma... yes
 checking for xmlParseDoc() in libxml/parser.h... yes
 checking for xsltParseStylesheetDoc() in libxslt/xslt.h... yes
@@ -71,10 +71,10 @@ checking for xmlSchemaSetValidStructuredErrors()... yes
 checking for xmlSchemaSetParserStructuredErrors()... yes
 creating Makefile
 
-current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri
+current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri
 make "DESTDIR=" clean
 
-current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri
+current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri
 make "DESTDIR="
 compiling html_document.c
 compiling html_element_description.c
@@ -170,9 +170,9 @@ rb_data_object_get(VALUE obj)
 2 warnings generated.
 linking shared-object nokogiri/nokogiri.bundle
 Cleaning files only used during build.
-rm -rf /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri/tmp/x86_64-apple-darwin17.4.0/ports
-rm -rf /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/nokogiri-1.8.2/ports
+rm -rf /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri/tmp/x86_64-apple-darwin17.4.0/ports
+rm -rf /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/nokogiri-1.8.2/ports
 
-current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri
+current directory: /Users/jeremicolborati/Documents/workspace/git/twitter_like/server/vendor/bundle/gems/nokogiri-1.8.2/ext/nokogiri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20180406-57734-1kc9vqw/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20180407-37520-1ssjr24/nokogiri
