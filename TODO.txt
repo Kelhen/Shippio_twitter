@@ -22,7 +22,12 @@ TWITTER
 - [EXTRA] reply to twitt (max 140c)
 - [EXTRA] see replies of a twitt (max 140c)
 
+Technical :
+[*]make the client work with Server
+[*]add Bootstrap
+[*]add fontawesome
 add tests
+add install script
 
 edit README file to explaine how to install and start the twitter like client
 how to install ruby, rails, node,

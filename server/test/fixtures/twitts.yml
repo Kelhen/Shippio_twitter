@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  twitt: MyText
+  created_at: 2018-04-07 14:35:19
+
+two:
+  twitt: MyText
+  created_at: 2018-04-07 14:35:19
