@@ -1,1 +1,1 @@
-# Twitter client using rails vue graphql
+# Twitter like client and server using rails vue graphql
