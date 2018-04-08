@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export const ALL_TWITT_QUERY = gql`
-  query AllTwittQuery {
+  query AllTwittQuery  {
     allTwitt {
       id
       twitt

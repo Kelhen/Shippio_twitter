@@ -3,6 +3,7 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import Vue from 'vue'
 import VueApollo from 'vue-apollo'
+import router from './router'
 import moment from 'moment'
 import VueMoment from 'vue-moment'
 import fontawesome from '@fortawesome/fontawesome'
@@ -19,7 +20,6 @@ Vue.use(VueMoment, {
 fontawesome.library.add(brands, faSpinner)
 
 const httpLink = new HttpLink({
-  // You should use an absolute URL here
   uri: 'http://localhost:3000/graphql'
 })
 
@@ -42,6 +42,7 @@ const apolloProvider = new VueApollo({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   provide: apolloProvider.provide(),
   render: h => h(App)
 })
