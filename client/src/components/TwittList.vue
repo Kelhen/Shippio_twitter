@@ -1,11 +1,11 @@
 <template>
   <div>
     <h4 v-if="loading">Loading...</h4>
-    <span v-if="allTwitt">Woa, such emply</span>
+    <span v-if="!allTwitt">Woa, such emply</span>
     <twitt-item
       v-for="twitt in allTwitt"
       :key="twitt.id"
-      :twitt="twitt.twitt">
+      :twitt="twitt">
     </twitt-item>
   </div>
 </template>
@@ -17,10 +17,9 @@ import TwittItem from './TwittItem'
 export default {
   name: 'TwittList',
 
-  method: 'POST',
   data () {
     return {
-      allTwitt: [],
+      allTwitt: null,
       loading: 0
     }
   },

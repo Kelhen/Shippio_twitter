@@ -3,13 +3,20 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import Vue from 'vue'
 import VueApollo from 'vue-apollo'
+import moment from 'moment'
+import VueMoment from 'vue-moment'
 import fontawesome from '@fortawesome/fontawesome'
+import brands from '@fortawesome/fontawesome-free-brands'
+import { faSpinner } from '@fortawesome/fontawesome-free-solid'
 
 import App from './App'
 
 Vue.config.productionTip = false
+Vue.use(VueMoment, {
+  moment
+})
 
-fontawesome.library.add()
+fontawesome.library.add(brands, faSpinner)
 
 const httpLink = new HttpLink({
   // You should use an absolute URL here

@@ -2,7 +2,7 @@ TODO list of things to do in order to dev a twitter like client using rails, vue
 [*] = done
 
 [*]creat git repo
-push the inital projects (client(vue) and server(rails)) into the git
+[*]push the inital projects (client(vue) and server(rails)) into the git
 [*]find a mail lib for rails (ink?)
 
 funcitonalities/pages
