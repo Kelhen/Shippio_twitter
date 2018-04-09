@@ -7,4 +7,5 @@ Types::TwittType = GraphQL::ObjectType.define do
   field :id, !types.ID
   field :twitt, !types.String
   field :created_at, !types.Int
+  field :postedBy, -> { Types::UserType }, property: :user
 end

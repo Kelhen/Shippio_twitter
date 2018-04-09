@@ -16,7 +16,7 @@ TWITTER
 -feed(main page when Logedin)
 -search user
 -follow/unfollow user
--twitt(max 140c)
+[*]-twitt(max 140c)
 -follow
 -follower
 - [EXTRA] reply to twitt (max 140c)
