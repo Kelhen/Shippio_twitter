@@ -39,9 +39,7 @@ export default {
   methods: {
     createTwitt () {
       const postedById = localStorage.getItem(T_USER_ID)
-      alert(typeof postedById)
       if (!postedById) {
-        alert('No user logged in')
         console.error('No user logged in')
         return
       }
@@ -71,12 +69,11 @@ export default {
           })
         }
       }).then((data) => {
-        // this.$router.push({
-        //   path: '/'
-        // })
+        this.$router.push({
+          path: '/'
+        })
       }).catch((error) => {
         console.error(error)
-        alert(error)
       })
     }
   }

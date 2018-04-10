@@ -19,7 +19,6 @@ class Resolvers::CreateTwitt < GraphQL::Function
     # ensures we have the correct user
     return unless user
 
-    end
     Twitt.create!(
       twitt: args[:twitt],
       created_at: DateTime.now,
@@ -27,9 +26,9 @@ class Resolvers::CreateTwitt < GraphQL::Function
       user: user
       # user: args[:postedById]
     )
-  rescue ActiveRecord::RecordInvalid => e
-    # this would catch all validation errors and translate them to GraphQL::ExecutionError
-    GraphQL::ExecutionError.new("Oups: #{e.record.errors.full_messages.join(', ')}")
-    puts "Oups: #{e.record.errors.full_messages.join(', ')}"
   end
+rescue ActiveRecord::RecordInvalid => e
+  # this would catch all validation errors and translate them to GraphQL::ExecutionError
+  GraphQL::ExecutionError.new("Oups: #{e.record.errors.full_messages.join(', ')}")
+  puts "Oups: #{e.record.errors.full_messages.join(', ')}"
 end
