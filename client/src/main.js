@@ -1,6 +1,7 @@
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
+import { ApolloLink } from 'apollo-link'
 import Vue from 'vue'
 import VueApollo from 'vue-apollo'
 import router from './router'
@@ -9,6 +10,7 @@ import VueMoment from 'vue-moment'
 import fontawesome from '@fortawesome/fontawesome'
 import brands from '@fortawesome/fontawesome-free-brands'
 import { faSpinner } from '@fortawesome/fontawesome-free-solid'
+import { T_USER_ID, T_AUTH_TOKEN } from './constants/settings'
 
 import App from './App'
 
@@ -23,8 +25,20 @@ const httpLink = new HttpLink({
   uri: 'http://localhost:3000/graphql'
 })
 
+const authMiddleware = new ApolloLink((operation, forward) => {
+  // add the authorization to the headers
+  const token = localStorage.getItem(T_AUTH_TOKEN)
+  operation.setContext({
+    headers: {
+      authorization: token ? `Bearer ${token}` : null
+    }
+  })
+
+  return forward(operation)
+})
+
 const apolloClient = new ApolloClient({
-  link: httpLink,
+  link: authMiddleware.concat(httpLink),
   cache: new InMemoryCache(),
   connectToDevTools: true
 })
@@ -39,10 +53,15 @@ const apolloProvider = new VueApollo({
   }
 })
 
+let userId = localStorage.getItem(T_USER_ID)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  data: {
+    userId
+  },
   provide: apolloProvider.provide(),
   render: h => h(App)
 })

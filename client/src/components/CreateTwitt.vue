@@ -1,8 +1,8 @@
 <template>
 <div class="container">
   <form>
-    <div class="form-group">
-      <textarea class="form-control" id="exampleFormControlTextarea1" v-model="twitt" placeholder="What's new ?" rows="3" maxlength="140"></textarea>
+    <div class="form-group"><span class="float-right">{{charactersLeft}}</span>
+      <textarea class="form-control" id="twitt" v-model="twitt" placeholder="What's new ?" name="twitt" rows="3" maxlength="140"></textarea>
     </div>
     <button @click="createTwitt()" class="btn btn-primary">Twitt me</button>
   </form>
@@ -16,6 +16,10 @@ import {
   ALL_TWITT_QUERY
 } from '../constants/graphql'
 
+import {
+  T_USER_ID
+} from '../constants/settings'
+
 export default {
   name: 'CreateTwitt',
 
@@ -24,15 +28,32 @@ export default {
       twitt: ''
     }
   },
+  computed: {
+    charactersLeft () {
+      let char = this.$data.twitt.length
+      let limit = 140
+
+      return (limit - char) + ' / ' + limit + ' characters remaining (wep old fashion)'
+    }
+  },
   methods: {
     createTwitt () {
-      const {
-        twitt
-      } = this.$data
+      const postedById = localStorage.getItem(T_USER_ID)
+      alert(typeof postedById)
+      if (!postedById) {
+        alert('No user logged in')
+        console.error('No user logged in')
+        return
+      }
+
+      const newTwitt = this.twitt
+      this.twitt = ''
+
       this.$apollo.mutate({
         mutation: CREATE_TWITT_MUTATION,
         variables: {
-          twitt
+          twitt: newTwitt,
+          postedById
         },
         update: (store, {
           data: {
@@ -50,11 +71,12 @@ export default {
           })
         }
       }).then((data) => {
-        this.$router.push({
-          path: '/'
-        })
+        // this.$router.push({
+        //   path: '/'
+        // })
       }).catch((error) => {
         console.error(error)
+        alert(error)
       })
     }
   }
@@ -62,10 +84,11 @@ export default {
 </script>
 
 <style media="screen">
-.container{
+.container {
   padding-top: 40px;
   padding-bottom: 20px;
 }
+
 textarea {
   width: auto;
   resize: vertical;
