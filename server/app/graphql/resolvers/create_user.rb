@@ -22,11 +22,11 @@ class Resolvers::CreateUser < GraphQL::Function
       validated: 'FALSE',
       validation_token: SecureRandom.urlsafe_base64
     )
-    # Sends email to user when user is created.
-    # TwittMailer.validation_email(@user).deliver_now if @user.save
   rescue ActiveRecord::RecordInvalid => e
     # catch all validation errors and translate them to GraphQL::ExecutionError
     GraphQL::ExecutionError.new("Oups: #{e.record.errors.full_messages.join(', ')}")
     # end
   end
+
+  # return query result here
 end
