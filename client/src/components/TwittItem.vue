@@ -4,7 +4,7 @@
       <img src="../assets/default_icon.png" alt="Avatar" width="48" height="48" class="rounded-circle">
     </div>
     <div class="col-sm-11">
-      <h5>Toto</h5> {{ twitt.created_at | moment("calendar") }}
+      <h5>{{twitt.user.name}}</h5> {{ twitt.created_at | moment("calendar") }}
     </div>
       <div class="col-sm-12">
       <p class="lead">{{twitt.twitt}}</p>

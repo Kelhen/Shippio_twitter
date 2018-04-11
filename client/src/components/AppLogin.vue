@@ -1,32 +1,26 @@
 <template>
-  <div class="container">
-    <h4 >{{login ? 'Login' : 'Sign Up'}}</h4>
-    <div >
-      <input
-        v-show="!login"
-        v-model="name"
-        type="text"
-        placeholder="Your name">
-      <input
-        v-model="email"
-        type="text"
-        placeholder="Your email address">
-      <input v-on:keyup.13="confirm()"
-        v-model="password"
-        type="password"
-        placeholder="Password">
-    </div>
-    <div >
-      <div class='pointer button'
-        @click="confirm()">
-        {{login ? 'login' : 'create an account'}}
+  <div >
+    <form>
+      <h4 >{{login ? 'Login' : 'Sign Up'}}</h4>
+      <div class="form-row">
+        <div v-show="!login"class="col-md-4 mb-3">
+          <label for="validationDefault01">Your name</label>
+          <input  v-model="name" type="text" class="form-control" placeholder="Your name" autofocus required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault02">Email</label>
+          <input type="email" v-model="email" placeholder="Your email address" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefaultUsername">Password</label>
+          <div class="input-group">
+            <input type="password" v-on:keyup.13="confirm()" v-model="password" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+          </div>
+        </div>
       </div>
-      <div
-        class='pointer button'
-        @click="login = !login">
-        {{login ? 'need an account?' : 'have one?'}}
-      </div>
-    </div>
+      <button class="btn btn-outline-primary my-3 my-sm-0" @click="confirm()" >{{login ? 'login' : 'create an account'}}</button>
+      <button class="btn btn-outline-success my-3 my-sm-0" @click="login = !login" >{{login ? 'need an account?' : 'have one?'}}</button>
+    </form>
   </div>
 </template>
 
