@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 import TwittList from '@/components/TwittList'
 import AppLogin from '@/components/AppLogin'
-// import ValidateUser from '@/components/ValidateUser'
+import ValidateUser from '@/components/ValidateUser'
 
 Vue.use(Router)
 
@@ -17,11 +17,11 @@ export default new Router({
     {
       path: '/login',
       component: AppLogin
+    },
+    {
+      path: '/validation',
+      component: ValidateUser
     }
-    // {
-    //   path: '/validation/:email/:validation_token',
-    //   component: ValidateUser
-    // },
     // {
     //   path: '/me',
     //   component: MyProfile

@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div class="container">
     <div class="border border-success">
       You can now login :)
@@ -21,12 +21,31 @@ export default {
       validation: false
     }
   },
-  apollo: {
-    validation: {
-      query: VALIDATE_USER_MUTATION,
-      variables: {
 
+  methods: {
+    createTwitt () {
+      const validationToken = this.$route.query.validationToken
+      const email = this.$route.query.email
+      alert(validationToken, email)
+      if (!validationToken || !email) {
+        console.error('arguments for validation are missing')
+        return
       }
+
+      this.$apollo.mutate({
+        mutation: VALIDATE_USER_MUTATION,
+        variables: {
+          email: email,
+          povalidationToken: validationToken
+        }
+      }).then((data) => {
+        this.$router.push({
+          path: '/login'
+        })
+      }).catch((error) => {
+        console.error(error)
+      })
     }
-  }}
-</script> -->
+  }
+}
+</script>

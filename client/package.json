@@ -1,6 +1,6 @@
 {
   "name": "twitter_client",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "twitter client with vue.js",
   "author": "Kelhen <Kelhen@users.noreply.github.com>",
   "private": true,
