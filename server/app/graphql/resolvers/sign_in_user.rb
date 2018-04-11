@@ -20,7 +20,7 @@ class Resolvers::SignInUser < GraphQL::Function
     # ensures we have the correct user
     return unless user
     return unless user.authenticate(input[:password])
-    # return unless validated
+    return unless validated
 
     # use Ruby on Rails - ActiveSupport::MessageEncryptor, to build a token
     crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base.byteslice(0..31))
