@@ -1,7 +1,6 @@
 class GraphqlController < ApplicationController
   def execute
     result = ServerSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
-    puts "my return value should me : #{result}"
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?
