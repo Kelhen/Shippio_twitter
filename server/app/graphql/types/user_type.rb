@@ -6,4 +6,5 @@ Types::UserType = GraphQL::ObjectType.define do
   field :email, !types.String
   field :validation_token, !types.String
   field :validated, !types.Boolean
+  field :image, !types.String
 end
