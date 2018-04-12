@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_09_073253) do
+ActiveRecord::Schema.define(version: 2018_04_11_145259) do
 
   create_table "twitts", force: :cascade do |t|
     t.text "twitt"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_04_09_073253) do
     t.string "validated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
 end

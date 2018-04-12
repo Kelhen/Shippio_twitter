@@ -2,4 +2,4 @@ Hello <%= @user.name %>
 <p>
   Want to validate your account ? clic the link bellow
 </p>
-<a href="http://localhost:8080/validation?email=<%= @user.email %>&validation_token=<%= @user.validation_token %>"><button type="button" class="btn btn-primary">Validate my accound</button></a>
+<a href="http://localhost:8080/validation?name=<%= @user.name %>&validation_token=<%= @user.validation_token %>"><button type="button" class="btn btn-primary">Validate my accound</button></a>

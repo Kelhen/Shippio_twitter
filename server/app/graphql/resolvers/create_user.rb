@@ -5,7 +5,7 @@ class Resolvers::CreateUser < GraphQL::Function
   AuthProviderInput = GraphQL::InputObjectType.define do
     name 'AuthProviderSignupData'
 
-    argument :email, Types::AuthProviderEmailInput
+    argument :email, Types::AuthProviderInput
   end
 
   argument :name, !types.String
@@ -20,7 +20,8 @@ class Resolvers::CreateUser < GraphQL::Function
       password: args[:authProvider][:email][:password],
       created_at: Time.now,
       validated: 'FALSE',
-      validation_token: SecureRandom.urlsafe_base64
+      validation_token: SecureRandom.urlsafe_base64,
+      image: 'default_icon.png'
     )
   rescue ActiveRecord::RecordInvalid => e
     # catch all validation errors and translate them to GraphQL::ExecutionError

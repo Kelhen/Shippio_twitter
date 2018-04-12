@@ -8,14 +8,14 @@ class Resolvers::CreateTwitt < GraphQL::Function
   type Types::TwittType
 
   # the mutation method
-  def call(_obj, args, ctx)
-    puts ctx
+  def call(_obj, args, _ctx)
+    # puts ctx
 
     # ugly tempory fix no access to data in  ctx ? or data are wrong
     # should be ctx[:session][:user]
     # TODO change it
     user = User.find_by id: args[:postedById]
-    puts user
+    # user = User.find_by id: ctx[:session][:user]['id']
     # ensures we have the correct user
     return unless user
 

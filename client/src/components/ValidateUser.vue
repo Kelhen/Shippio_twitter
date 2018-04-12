@@ -1,14 +1,18 @@
 <template>
-  <div class="container">
-    <div class="border border-success">
-      You can now login :)
+<div class="container">
+  <a href="/login">
+    <div class="btn btn-outline-success col-sm-12">
+      <h4>You can now login :) clic here to go login</h4>
     </div>
-  </div>
+  </a>
+</div>
 </template>
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import { VALIDATE_USER_MUTATION } from '../constants/graphql'
+import {
+  VALIDATE_USER_MUTATION
+} from '../constants/graphql'
 
 export default {
   name: 'ValidateUser',
@@ -18,16 +22,17 @@ export default {
 
   data () {
     return {
-      validation: false
+      validation: false,
+      login: false
     }
   },
 
   methods: {
     createTwitt () {
       const validationToken = this.$route.query.validationToken
-      const email = this.$route.query.email
-      alert(validationToken, email)
-      if (!validationToken || !email) {
+      const name = this.$route.query.name
+      alert(validationToken, name)
+      if (!validationToken || !name) {
         console.error('arguments for validation are missing')
         return
       }
@@ -35,7 +40,7 @@ export default {
       this.$apollo.mutate({
         mutation: VALIDATE_USER_MUTATION,
         variables: {
-          email: email,
+          name: name,
           povalidationToken: validationToken
         }
       }).then((data) => {
@@ -49,3 +54,8 @@ export default {
   }
 }
 </script>
+<style media="screen">
+.container {
+  margin-top: 70px;
+}
+</style>

@@ -1,5 +1,5 @@
 class Resolvers::SignInUser < GraphQL::Function
-  argument :email, !Types::AuthProviderEmailInput
+  argument :auth, !Types::AuthProviderInput
 
   # defines inline return type for the mutation
   type do
@@ -10,17 +10,17 @@ class Resolvers::SignInUser < GraphQL::Function
   end
 
   def call(_obj, args, ctx)
-    input = args[:email]
+    input = args[:auth]
 
     # basic validation
     return unless input
-
-    user = User.find_by email: input[:email]
+    user = User.find_by name: input[:name], validated: 'TRUE'
 
     # ensures we have the correct user
     return unless user
     return unless user.authenticate(input[:password])
-    return unless validated
+
+    # TODO: add error handling for unmatch user/password and unvalidated user
 
     # use Ruby on Rails - ActiveSupport::MessageEncryptor, to build a token
     crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base.byteslice(0..31))
