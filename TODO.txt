@@ -7,10 +7,10 @@ TODO list of things to do in order to dev a twitter like client using rails, vue
 
 funcitonalities/pages
 USER
--crate user(username!, password, mail)
--login/logout
+[*]-crate user(username!, password, mail)
+[*]-login/logout
 -edit user (password, username, avatar)
--verify email
+[*]-verify email
 
 TWITTER
 -feed(main page when Logedin)
