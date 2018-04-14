@@ -28,4 +28,17 @@ Types::QueryType = GraphQL::ObjectType.define do
     resolve ->(_obj, args, _ctx) { Followed.where('user_id = ?', args[:user_id]) }
     # resolve ->(_obj, args, _ctx) { Followed.all }
   end
+
+  field :feed, !types[Types::TwittType], 'Twitt Feed' do
+    argument :user_id, !types.ID
+    # resolve would be called in order to fetch data for that field
+    resolve ->(_obj, args, _ctx) {
+              sql = "SELECT twitts.* FROM twitts
+                LEFT JOIN followeds ON twitts.user_id = followeds.followed_id
+                JOIN users on twitts.user_id = users.id
+                WHERE followeds.user_id = #{args[:user_id]}"
+              # ActiveRecord::Base.connection.execute(sql)
+              Twitt.find_by_sql(sql)
+            }
+  end
 end

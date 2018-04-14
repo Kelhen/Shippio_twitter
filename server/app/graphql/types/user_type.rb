@@ -7,4 +7,5 @@ Types::UserType = GraphQL::ObjectType.define do
   field :validation_token, !types.String
   field :validated, !types.Boolean
   field :image, !types.String
+  # filed :followed, -> { Types::UserType }, property: :follower
 end
