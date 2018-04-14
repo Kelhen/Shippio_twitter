@@ -6,6 +6,7 @@ import AppLogin from '@/components/AppLogin'
 import ValidateUser from '@/components/ValidateUser'
 import MyProfile from '@/components/MyProfile'
 import UserList from '@/components/UserList'
+import FeedList from '@/components/FeedList'
 
 Vue.use(Router)
 
@@ -31,6 +32,10 @@ export default new Router({
     {
       path: '/searchuser',
       component: UserList
+    },
+    {
+      path: '/feed',
+      component: FeedList
     }
   ],
   // no hash in the url

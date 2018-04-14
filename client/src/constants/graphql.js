@@ -120,3 +120,18 @@ export const FOLLOWED_USER = gql`
     }
   }
 `
+
+export const FEED_QUERY = gql`
+  query FeedQuery($user_id: ID!) {
+    feed(user_id: $user_id) {
+      id
+      twitt
+      created_at
+      postedBy {
+        id
+        name
+        image
+      }
+    }
+  }
+`
