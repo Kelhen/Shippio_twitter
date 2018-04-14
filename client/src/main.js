@@ -7,6 +7,7 @@ import VueApollo from 'vue-apollo'
 import router from './router'
 import moment from 'moment'
 import VueMoment from 'vue-moment'
+import VueLodash from 'vue-lodash'
 import fontawesome from '@fortawesome/fontawesome'
 import brands from '@fortawesome/fontawesome-free-brands'
 import { faSpinner } from '@fortawesome/fontawesome-free-solid'
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 Vue.use(VueMoment, {
   moment
 })
+Vue.use(VueLodash)
 
 fontawesome.library.add(brands, faSpinner)
 

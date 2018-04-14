@@ -19,4 +19,13 @@ Types::QueryType = GraphQL::ObjectType.define do
     # resolve would be called in order to fetch data for that field
     resolve ->(_obj, args, _ctx) { User.find_by id: args[:id] }
   end
+
+  field :followed, !types[Types::FollowType], 'My followed' do
+    argument :user_id, !types.ID
+    # type Types::FollowType
+
+    # resolve would be called in order to fetch data for that field
+    resolve ->(_obj, args, _ctx) { Followed.where('user_id = ?', args[:user_id]) }
+    # resolve ->(_obj, args, _ctx) { Followed.all }
+  end
 end

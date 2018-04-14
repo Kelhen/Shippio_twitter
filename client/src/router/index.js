@@ -5,6 +5,7 @@ import TwittList from '@/components/TwittList'
 import AppLogin from '@/components/AppLogin'
 import ValidateUser from '@/components/ValidateUser'
 import MyProfile from '@/components/MyProfile'
+import UserList from '@/components/UserList'
 
 Vue.use(Router)
 
@@ -26,11 +27,11 @@ export default new Router({
     {
       path: '/me',
       component: MyProfile
+    },
+    {
+      path: '/searchuser',
+      component: UserList
     }
-    // {
-    //   path: '/Twitt/:twittid',
-    //   component: MyProfile
-    // }
   ],
   // no hash in the url
   mode: 'history'

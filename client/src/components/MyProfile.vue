@@ -3,21 +3,22 @@
   <form>
     <h4>My profile</h4>
         <div class="form-row">
-    <avatar :username="`${myUser.name}`" :src="require(`@/assets/${img}`)" :size="48"></avatar>
+    <!-- <avatar :username="`${myUser.name}`" :src="require(`@/assets/${img}`)" :size="48"></avatar> -->
+    <avatar :username="`${myUser.name}`"  :size="48"></avatar>
   </div>
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationDefault01">Username</label>
-        <input v-model="myUser.name" type="text" class="form-control" placeholder="User name" autofocus required>
+        <input v-model="myUser.name" type="text" class="form-control" placeholder="User name" autofocus>
       </div>
       <div  class="col-md-4 mb-3">
         <label for="validationDefault02">Email</label>
-        <input type="email" v-model="myUser.email" placeholder="Your email address" class="form-control" required>
+        <input type="email" v-model="myUser.email" placeholder="Your email address" class="form-control">
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationDefaultUsername">Password</label>
         <div class="input-group">
-          <input type="password" v-on:keyup.13="confirm()" v-model="myUser.password" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+          <input type="password" v-on:keyup.13="confirm()" v-model="myUser.password" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2">
         </div>
       </div>
     </div>

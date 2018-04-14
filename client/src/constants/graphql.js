@@ -82,6 +82,16 @@ export const SIGNIN_USER_MUTATION = gql`
   }
 `
 
+export const ALL_USER = gql`
+  query allUser {
+    allUser{
+    id
+    name
+    email
+    image
+  }}
+`
+
 export const USER_QUERY = gql`
   query UserQuery($id: ID!) {
     myUser(id: $id) {
@@ -89,6 +99,24 @@ export const USER_QUERY = gql`
       name
       email
       image
+    }
+  }
+`
+
+export const EDIT_FOLLOW = gql`
+  mutation editFollow($user_id: ID!, $followed_id: ID!) {
+    editFollow(user_id: $user_id, followed_id: $followed_id) {
+      user_id
+      followed_id
+      action
+    }
+  }
+`
+
+export const FOLLOWED_USER = gql`
+  query followedUser($user_id: ID!) {
+    followed(user_id: $user_id){
+      followed_id
     }
   }
 `

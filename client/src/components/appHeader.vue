@@ -13,12 +13,12 @@
           <a class="nav-link disabled" href="/me">My profile</a>
         </li>
         <li v-if="userId" class="nav-item">
-          <a class="nav-link disabled" href="/me">Find User</a>
+          <a class="nav-link disabled" href="/searchuser">Find User</a>
         </li>
       </ul>
       <form class="form-inline">
-        <input v-if="userId" class="form-control mr-sm-1" type="text" placeholder="Search" aria-label="Search">
-        <button v-if="userId" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search user</button>
+        <!-- <input v-if="userId" class="form-control mr-sm-1" type="text" placeholder="Search" aria-label="Search"> -->
+        <!-- <button v-if="userId" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search user</button> -->
         <button class="btn btn-outline-danger my-3 my-sm-0" v-if="userId" @click="logout()">logout</button>
         <router-link v-else to="/login" class="btn btn-outline-primary my-3 my-sm-0 float-right">login</router-link>
       </form>

@@ -2,7 +2,8 @@
 <div class="row border border-light rounded twitt">
   <div class="col-1" style="padding: 5px">
     <!-- <avatar v-bind:username='usename'></avatar> -->
-    <avatar :username="`${twitt.postedBy.name}`" :src="require(`@/assets/${img}`)" :size="48"></avatar>
+    <!-- <avatar :username="`${twitt.postedBy.name}`" :src="require(`@/assets/${img}`)" :size="48"></avatar> -->
+    <avatar :username="`${twitt.postedBy.name}`"  :size="48"></avatar>
   </div>
   <div class="col-sm-11">
     <h5>{{twitt.postedBy.name}}</h5> {{ twitt.created_at | moment("calendar") }}
@@ -10,9 +11,9 @@
   <div class="col-sm-12">
     <p class="lead">{{twitt.twitt}}</p>
   </div>
-  <div class="col-12">
+  <!-- <div class="col-12">
     <font-awesome-icon icon="comment" /> x reply
-  </div>
+  </div> -->
 </div>
 </template>
 
