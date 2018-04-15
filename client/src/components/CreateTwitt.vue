@@ -2,7 +2,7 @@
 <div class="container">
   <form>
     <div class="form-group"><span class="float-right">{{charactersLeft}}</span>
-      <textarea class="form-control" id="twitt" v-model="twitt" placeholder="What's new ?" name="twitt" rows="3" maxlength="140"></textarea>
+      <textarea class="form-control" id="twitt" v-model="twitt" placeholder="What's new ?" name="twitt" rows="3" minlength=1 maxlength="140"></textarea>
     </div>
     <button @click="createTwitt()" class="btn btn-primary">Twitt me</button>
   </form>
