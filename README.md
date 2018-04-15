@@ -13,7 +13,7 @@ Vue-apollo (https://github.com/Akryum/vue-apollo)
 Vue (https://fr.vuejs.org/)
 
 
-Installation
+Installation MAC OSX
 ------------
 
 SCRIPTED Installation :

@@ -33,7 +33,7 @@ StartProject(){
   cd ..
   cd client ||  (echo 'client not found'; exit 1)
   npm run dev &
-  open -a safari 'http://localhost:8080'
+  open -a safari 'http://localhost:3000/graphiql' 'http://localhost:8080'
   echo 'server run on http://localhost:3000'
   echo 'client run on http://localhost:8080'
 }
