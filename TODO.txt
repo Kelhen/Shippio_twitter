@@ -9,16 +9,16 @@ funcitonalities/pages
 USER
 [*]-crate user(username!, password, mail)
 [*]-login/logout
--edit user (password, username, avatar)
+[*]-edit user (password, username, [-]avatar)
 [*]-verify email
 
 TWITTER
--feed(main page when Logedin)
--search user
--follow/unfollow user
+[*]-feed(main page when Logedin)
+[*]-search user
+[*]-follow/unfollow user
 [*]-twitt(max 140c)
--follow
--follower
+[-]-follow
+[-]-follower
 - [EXTRA] reply to twitt (max 140c)
 - [EXTRA] see replies of a twitt (max 140c)
 
@@ -27,7 +27,7 @@ Technical :
 [*]add Bootstrap
 [*]add fontawesome
 add tests
-add install script
+[*]add install script
 
 edit README file to explaine how to install and start the twitter like client
 how to install ruby, rails, node,
