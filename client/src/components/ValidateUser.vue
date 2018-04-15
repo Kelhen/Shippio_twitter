@@ -1,8 +1,8 @@
 <template>
 <div class="container">
   <a href="/login">
-    <div class="btn btn-outline-success col-sm-12">
-      <h4>You can now login :) clic here to go login</h4>
+    <div @click="validate()" class="btn btn-outline-success col-sm-12">
+      <h4>clic to validate your account</h4>
     </div>
   </a>
 </div>
@@ -26,22 +26,30 @@ export default {
       login: false
     }
   },
-
+  // apollo: {
+  //   feed: {
+  //     mutation: VALIDATE_USER_MUTATION,
+  //     variables: {
+  //       name: this.$route.query.name,
+  //       povalidationToken: this.$route.query.validationToken
+  //     }
+  //   }
+  // },
   methods: {
-    createTwitt () {
-      const validationToken = this.$route.query.validationToken
+    validate () {
+      const validationToken = this.$route.query.validation_token
       const name = this.$route.query.name
       alert(validationToken, name)
       if (!validationToken || !name) {
         console.error('arguments for validation are missing')
+        console.log(validationToken, name)
         return
       }
-
       this.$apollo.mutate({
         mutation: VALIDATE_USER_MUTATION,
         variables: {
           name: name,
-          povalidationToken: validationToken
+          token: validationToken
         }
       }).then((data) => {
         this.$router.push({

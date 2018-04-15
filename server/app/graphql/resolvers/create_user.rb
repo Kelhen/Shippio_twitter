@@ -5,19 +5,19 @@ class Resolvers::CreateUser < GraphQL::Function
   AuthProviderInput = GraphQL::InputObjectType.define do
     name 'AuthProviderSignupData'
 
-    argument :email, Types::AuthProviderInput
+    argument :auth, Types::AuthProviderInput
   end
 
-  argument :name, !types.String
+  argument :email, !types.String
   argument :authProvider, !AuthProviderInput
 
   type Types::UserType
 
   def call(_obj, args, _ctx)
     @user = User.create!(
-      name: args[:name],
-      email: args[:authProvider][:email][:email],
-      password: args[:authProvider][:email][:password],
+      email: args[:email],
+      name: args[:authProvider][:auth][:name],
+      password: args[:authProvider][:auth][:password],
       created_at: Time.now,
       validated: 'FALSE',
       validation_token: SecureRandom.urlsafe_base64,

@@ -5,7 +5,7 @@
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationDefault01">User name</label>
-        <input v-model="name" type="text" class="form-control" placeholder="User name" autofocus required>
+        <input v-model="name" type="text" class="form-control" placeholder="User name" required>
       </div>
       <div v-show="!login" class="col-md-4 mb-3">
         <label for="validationDefault02">Email</label>
@@ -69,7 +69,11 @@ export default {
             })
           }
         }).catch((error) => {
-          alert(error)
+          alert('user not validated')
+          console.log(error)
+          this.$router.push({
+            path: '/login'
+          })
         })
       } else {
         this.$apollo.mutate({
@@ -80,17 +84,11 @@ export default {
             password
           }
         }).then((result, error) => {
-          if (result) {
-            const id = result.data.signinUser.user.id
-            const token = result.data.signinUser.token
-            this.saveUserData(id, token)
-          } else {
-            this.$router.push({
-              path: '/login'
-            })
-          }
+          this.$router.push({
+            path: '/login'
+          })
         }).catch((error) => {
-          alert(error)
+          console.log(error)
         })
       }
       this.$router.push({

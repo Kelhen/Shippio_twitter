@@ -35,10 +35,10 @@ export const CREATE_TWITT_MUTATION = gql`
 export const CREATE_USER_MUTATION = gql`
   mutation CreateUserMutation($name: String!, $email: String!, $password: String!) {
     createUser(
-      name: $name,
+      email: $email,
       authProvider: {
-        email: {
-          email: $email,
+        auth: {
+          name: $name,
           password: $password
         }
       }
@@ -46,7 +46,7 @@ export const CREATE_USER_MUTATION = gql`
       id
     }
 
-    signinUser(name: {
+    signinUser(auth: {
       name: $name,
       password: $password
     }) {
@@ -59,12 +59,12 @@ export const CREATE_USER_MUTATION = gql`
 `
 
 export const VALIDATE_USER_MUTATION = gql`
-  mutation ValidateUserMutation($name: String!, $name: String!, $validation_token: String!) {
-    createUser(
+  mutation ValidateUserMutation($name: String!, $token: String!) {
+    validateUser(
       name: $name,
-      validation_token: $validation_token
+      token: $token
     ) {
-      validate
+        id
     }
   }
 `
