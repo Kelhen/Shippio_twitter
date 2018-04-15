@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import TwittList from '@/components/TwittList'
+import MyTwittList from '@/components/MyTwittList'
 import AppLogin from '@/components/AppLogin'
 import ValidateUser from '@/components/ValidateUser'
 import MyProfile from '@/components/MyProfile'
@@ -14,6 +15,15 @@ export default new Router({
   routes: [
     {
       path: '/',
+      component: FeedList
+    },
+    {
+      path: '/MyTwitt',
+      name: 'MyTwittList',
+      component: MyTwittList
+    },
+    {
+      path: '/AllTwitt',
       name: 'TwittList',
       component: TwittList
     },
@@ -32,10 +42,6 @@ export default new Router({
     {
       path: '/searchuser',
       component: UserList
-    },
-    {
-      path: '/feed',
-      component: FeedList
     }
   ],
   // no hash in the url

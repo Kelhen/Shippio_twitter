@@ -7,6 +7,12 @@ Types::QueryType = GraphQL::ObjectType.define do
     resolve ->(_obj, _args, _ctx) { Twitt.all }
   end
 
+  field :myTwitt, !types[Types::TwittType], 'MY Twitt' do
+    argument :user_id, !types.ID
+    # resolve would be called in order to fetch data for that field
+    resolve ->(_obj, args, _ctx) { Twitt.where('user_id = ?', args[:user_id]) }
+  end
+
   field :allUser, !types[Types::UserType], 'ALl Twitt' do
     # resolve would be called in order to fetch data for that field
     resolve ->(_obj, _args, _ctx) { User.all }

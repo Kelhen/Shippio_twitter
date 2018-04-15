@@ -13,11 +13,14 @@
           <a class="nav-link disabled" href="/me">My profile</a>
         </li>
         <li v-if="userId" class="nav-item">
-          <a class="nav-link disabled" href="/searchuser">Find User</a>
+          <a class="nav-link disabled" href="/MyTwitt">My Twitt</a>
         </li>
         <li v-if="userId" class="nav-item">
-          <a class="nav-link disabled" href="/feed">Feed</a>
+          <a class="nav-link disabled" href="/searchuser">Find User</a>
         </li>
+        <!-- <li v-if="userId" class="nav-item">
+          <a class="nav-link disabled" href="/feed">Feed</a>
+        </li> -->
       </ul>
       <form class="form-inline">
         <!-- <input v-if="userId" class="form-control mr-sm-1" type="text" placeholder="Search" aria-label="Search"> -->

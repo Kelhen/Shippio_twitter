@@ -135,3 +135,18 @@ export const FEED_QUERY = gql`
     }
   }
 `
+
+export const MY_TWITT_QUERY = gql`
+  query MyTwittQuery($user_id: ID!) {
+    myTwitt(user_id: $user_id) {
+      id
+      twitt
+      created_at
+      postedBy {
+        id
+        name
+        image
+      }
+    }
+  }
+`

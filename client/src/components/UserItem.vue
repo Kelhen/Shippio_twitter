@@ -1,10 +1,10 @@
 <template>
 <div class="row">
   <div class="col-1">
-    <button v-bind:class="[follow ? 'btn-outline-success' : 'btn-outline-danger']" class="btn btn-sm  my-3 my-sm-0" @click="followHim()">{{ follow ? 'Followed' :'Not Followe' }}</button>
+    <button v-bind:class="[follow ? 'btn-outline-success' : 'btn-outline-danger']" class="btn btn-sm  my-3 my-sm-0" @click="followHim()">{{ follow ? 'Followed' :'Not Follow' }}</button>
   </div>
-  <div class="col-11">
-    <h3>{{user.name}} {{followed.followed_id}}{{this.user.id}}</h3>
+  <div class="col-10">
+    <h3>{{user.name}}</h3>
   </div>
 </div>
 </template>
@@ -33,7 +33,7 @@ export default {
       query: FOLLOWED_USER,
       variables () {
         return {
-          user_id: '51'
+          user_id: localStorage.getItem(T_USER_ID)
         }
       }
     }
@@ -49,9 +49,6 @@ export default {
       }
       console.log('nop')
       return false
-      // console.log(this.followed, this.user.id, this._.includes(this.followed === this.user.id))
-      // this.$forceUpdate()
-      // return this.followed.followed_id === this.user.id
     }
   },
   methods: {
@@ -70,10 +67,6 @@ export default {
         path: '/searchuser'
       })
     }
-    // follow () {
-    //   // followed = !followed
-    //   return this._.includes(localStorage.getItem(T_USER_ID), this.user.id)
-    // }
   }
 }
 </script>
