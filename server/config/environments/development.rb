@@ -70,8 +70,8 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'nottwitter.com',
-    user_name:            'nottwitter0@gmail.com',
-    password:             'WDf-CLm-3UM-apE',
+    user_name:            'user_name',
+    password:             'password',
     authentication:       'plain',
     enable_starttls_auto: true
   }
